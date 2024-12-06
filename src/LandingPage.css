@@ -2,9 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-image: url('./assets/background.jpg');
-  background-size: cover;
+    background-image: url('./assets/background.jpg');
+    background-size: cover;
+    height: 100vh;
   background-position: center;
   color: white;
   text-align: center;
