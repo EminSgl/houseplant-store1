@@ -12,7 +12,7 @@ const ProductListing = () => {
 
   return (
     <div>
-      <h1>Our Plants</h1>
+      <h1>Product Listing Page</h1>
       <div className="product-grid">
         {products.map((product) => (
           <div key={product.id} className="product-card">
