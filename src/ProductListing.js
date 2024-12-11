@@ -2,12 +2,12 @@ import React from 'react';
 
 const ProductListing = () => {
   const products = [
-    { id: 1, name: 'Monstera', price: 20, category: 'Tropical', thumbnail: 'monstera.jpg' },
-    { id: 2, name: 'Snake Plant', price: 15, category: 'Succulent', thumbnail: 'snakeplant.jpg' },
-    { id: 3, name: 'Fiddle Leaf Fig', price: 25, category: 'Ficus', thumbnail: 'fiddleleaf.jpg' },
-    { id: 4, name: 'Aloe Vera', price: 10, category: 'Succulent', thumbnail: 'aloevera.jpg' },
-    { id: 5, name: 'Peace Lily', price: 18, category: 'Flowering', thumbnail: 'peacelily.jpg' },
-    { id: 6, name: 'ZZ Plant', price: 22, category: 'Tropical', thumbnail: 'zzplant.jpg' },
+    { id: 1, name: 'Monstera', price: 20, category: 'Tropical', thumbnail: './assets/plant.webp' },
+    { id: 2, name: 'Snake Plant', price: 15, category: 'Succulent', thumbnail: './assets/plant.webp' },
+    { id: 3, name: 'Fiddle Leaf Fig', price: 25, category: 'Ficus', thumbnail: './assets/plant.webp' },
+    { id: 4, name: 'Aloe Vera', price: 10, category: 'Succulent', thumbnail: './assets/plant.webp' },
+    { id: 5, name: 'Peace Lily', price: 18, category: 'Flowering', thumbnail: './assets/plant.webp' },
+    { id: 6, name: 'ZZ Plant', price: 22, category: 'Tropical', thumbnail: './assets/plant.webp' },
   ];
 
   return (
