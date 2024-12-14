@@ -1,0 +1,30 @@
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.cart-item img {
+  width: 100px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.cart-summary {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+button {
+  margin: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
