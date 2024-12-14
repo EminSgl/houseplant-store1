@@ -1,6 +1,6 @@
 import React from "react";
 
-function ShoppingCartPage({ cart, setCart }) {
+function ShoppingCart({ cart, setCart }) {
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
   const totalCost = cart.reduce((acc, item) => acc + item.quantity * item.price, 0);
 
@@ -61,4 +61,4 @@ function ShoppingCartPage({ cart, setCart }) {
   );
 }
 
-export default ShoppingCartPage;
+export default ShoppingCart;
