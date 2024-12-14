@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import ProductListing from "./ProductListing";
 import ShoppingCart from "./ShoppingCart";
-import "./App.css"; // Falls du CSS für den Header hinzufügen möchtest
+import { FaShoppingCart } from "react-icons/fa"; // Importiere das Einkaufskorb-Icon
+import "./App.css";
 
 function App() {
-  // Zustand für den Warenkorb
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState([]); // Globaler Zustand für den Warenkorb
 
   return (
     <Router>
@@ -23,7 +23,12 @@ function App() {
                 <Link to="/products">Products</Link>
               </li>
               <li>
-                <Link to="/cart">Cart ({cart.reduce((acc, item) => acc + item.quantity, 0)})</Link>
+                <Link to="/cart" className="cart-link">
+                  <FaShoppingCart /> {/* Einkaufskorb-Icon */}
+                  <span className="cart-count">
+                    {cart.reduce((acc, item) => acc + item.quantity, 0)}
+                  </span>
+                </Link>
               </li>
             </ul>
           </nav>
