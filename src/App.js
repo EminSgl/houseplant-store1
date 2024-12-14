@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import ProductListing from "./ProductListing";
-import ShoppingCartPage from "./ShoppingCartPage";
+import ShoppingCart from "./ShoppingCart";
 
 function App({ cart }) {
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
