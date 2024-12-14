@@ -2,14 +2,27 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Header = ({ cart }) => {
-  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <header>
+    <header className="app-header">
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/products">Products</Link>
-        <Link to="/cart">Cart ({totalItems})</Link>
+        <ul className="nav-links">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/products">Products</Link>
+          </li>
+          <li>
+            <Link to="/cart">
+              <span role="img" aria-label="cart">
+                🛒
+              </span>
+              {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
+            </Link>
+          </li>
+        </ul>
       </nav>
     </header>
   );
