@@ -2,14 +2,14 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import ProductListing from "./ProductListing";
-import ShoppingCart from "./ShoppingCart";
+import ShoppingCart from "./ShoppingCart"; // Name aktualisiert
+import "./App.css"; // Falls du CSS für den Header hinzufügen möchtest
 
-function App({ cart }) {
-  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
-
+function App() {
   return (
     <Router>
       <div>
+        {/* Header mit Navigation */}
         <header className="app-header">
           <nav>
             <ul className="nav-links">
@@ -19,18 +19,20 @@ function App({ cart }) {
               <li>
                 <Link to="/products">Products</Link>
               </li>
+              <li>
+                <Link to="/cart">
+                  <span className="cart-icon">🛒</span>
+                </Link>
+              </li>
             </ul>
           </nav>
-          <div className="cart-icon">
-            <Link to="/cart">🛒</Link>
-            <span className="cart-count">{totalItems}</span>
-          </div>
         </header>
 
+        {/* Routen */}
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/products" element={<ProductListing />} />
-          <Route path="/cart" element={<ShoppingCartPage />} />
+          <Route path="/cart" element={<ShoppingCart />} />
         </Routes>
       </div>
     </Router>
