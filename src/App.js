@@ -1,18 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import ProductListing from "./ProductListing";
-import ShoppingCart from "./ShoppingCart";
-import { FaShoppingCart } from "react-icons/fa"; // Importiere das Einkaufskorb-Icon
-import "./App.css";
+import ShoppingCartPage from "./ShoppingCartPage";
 
-function App() {
-  const [cart, setCart] = useState([]); // Globaler Zustand für den Warenkorb
+function App({ cart }) {
+  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <Router>
       <div>
-        {/* Header mit Navigation */}
         <header className="app-header">
           <nav>
             <ul className="nav-links">
@@ -22,29 +19,18 @@ function App() {
               <li>
                 <Link to="/products">Products</Link>
               </li>
-              <li>
-                <Link to="/cart" className="cart-link">
-                  <FaShoppingCart /> {/* Einkaufskorb-Icon */}
-                  <span className="cart-count">
-                    {cart.reduce((acc, item) => acc + item.quantity, 0)}
-                  </span>
-                </Link>
-              </li>
             </ul>
           </nav>
+          <div className="cart-icon">
+            <Link to="/cart">🛒</Link>
+            <span className="cart-count">{totalItems}</span>
+          </div>
         </header>
 
-        {/* Routen */}
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route
-            path="/products"
-            element={<ProductListing cart={cart} setCart={setCart} />}
-          />
-          <Route
-            path="/cart"
-            element={<ShoppingCart cart={cart} setCart={setCart} />}
-          />
+          <Route path="/products" element={<ProductListing />} />
+          <Route path="/cart" element={<ShoppingCartPage />} />
         </Routes>
       </div>
     </Router>
