@@ -1,3 +1,4 @@
+/* Allgemeines Layout für die Produktliste */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -5,19 +6,44 @@
   padding: 20px;
 }
 
+/* Einzelne Produktkarten */
 .product-card {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
   text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Produktbilder */
 .product-card img {
   width: 100%;
   height: auto;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 
+/* Produktnamen */
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+}
+
+/* Preisstil */
+.product-card p {
+  font-size: 16px;
+  margin: 5px 0 15px;
+  color: #555;
+}
+
+/* Button-Design */
 .product-card button {
   background-color: #28a745;
   color: white;
@@ -25,8 +51,15 @@
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
 }
 
 .product-card button:hover {
   background-color: #218838;
+}
+
+.product-card button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
 }
